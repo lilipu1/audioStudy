@@ -1,0 +1,23 @@
+apply plugin: 'com.huawei.ohos.hap'
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('H:/harmony/AudioStudy/talkwebKey.p12')
+            storePassword '0000001A1C3537DA38F569692B3FDB3AB8035868D87DDF08478B88DF57A2EB323C34FE9DA8AAE7AC8755'
+            keyAlias 'talkweb'
+            keyPassword '0000001A1EAFF7CA5F833E3F151ED5252E66B132DC6932731E4636C5A0672EC2D28FDE0ED3DC1260E5FE'
+            signAlg 'SHA256withECDSA'
+            profile file('H:/harmony/AudioStudy/AudioStudyDebug.p7b')
+            certpath file('H:/harmony/AudioStudy/talkwebCer.cer')
+        }
+    }
+    compileSdkVersion 4
+    defaultConfig {
+        compatibleSdkVersion 4
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testCompile 'junit:junit:4.12'
+}
